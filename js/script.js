@@ -1,39 +1,56 @@
-let randomNumber = Math.floor(Math.random() * 3 + 1);
+function playGame (playerInput){
+    
+    clearMessages();
 
-console.log('Wylosowana liczba to: ' + randomNumber);
+    let randomNumber = Math.floor(Math.random() * 3 + 1);
 
-/*let computerMove = 'nieznany ruch';
+    console.log('Wylosowana liczba to: ' + randomNumber);
 
-if(randomNumber == 1){
-  computerMove = 'kamień';
-} else if (randomNumer == 2) {
-    computerMove = 'papier';
-} else if (randomNumer == 3) {
-    computerMove = 'nożyce';
-}*/
+    /*let computerMove = 'nieznany ruch';
 
-let computerMove = getMoveName(randomNumber);
+    if(randomNumber == 1){
+        computerMove = 'kamień';
+    } else if (randomNumer == 2) {
+        computerMove = 'papier';
+    } else if (randomNumer == 3) {
+        computerMove = 'nożyce';
+    }*/
 
-printMessage('Mój ruch to: ' + computerMove);
+    let computerMove = getMoveName(randomNumber);
 
-let playerInput = prompt('Wybierz swój ruch! 1: kamień, 2: papier, 3: nożyce.');
+    printMessage('Mój ruch to: ' + computerMove);
 
-console.log('Gracz wpisał: ' + playerInput);
+    /*let playerInput = prompt('Wybierz swój ruch! 1: kamień, 2: papier, 3: nożyce.');*/
 
-/*let playerMove = 'nieznany ruch';
+    console.log('Gracz wpisał: ' + playerInput);
 
-if(playerInput == '1'){
-  playerMove = 'kamień';
-} else if (playerInput == '2'){
-    playerMove = 'papier';
-} else if (playerInput == '3'){
-    playerMove = 'nożyce';
-}*/
+    /*let playerMove = 'nieznany ruch';
 
-let playerMove = getMoveName(playerInput);
+    if(playerInput == '1'){
+    playerMove = 'kamień';
+    } else if (playerInput == '2'){
+        playerMove = 'papier';
+    } else if (playerInput == '3'){
+        playerMove = 'nożyce';
+    }*/
 
-printMessage('Twój ruch to: ' + playerMove);
+    let playerMove = getMoveName(playerInput);
 
-let solve = displayResult(computerMove,playerMove);
+    printMessage('Twój ruch to: ' + playerMove);
 
-printMessage('Wynik: ' + solve)
+    let solve = displayResult(computerMove,playerMove);
+
+    printMessage('Wynik: ' + solve);
+}
+
+document.getElementById('play-rock').addEventListener('click', function(){
+    playGame('1');
+});
+
+document.getElementById('play-paper').addEventListener('click', function(){
+    playGame('2');
+});
+
+document.getElementById('play-scissors').addEventListener('click', function(){
+    playGame('3');
+});
