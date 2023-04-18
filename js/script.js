@@ -1,22 +1,22 @@
-function playGame (playerInput){
+{let playGame = function (playerInput){
     
     clearMessages();
 
-    let randomNumber = Math.floor(Math.random() * 3 + 1);
+    const randomNumber = Math.floor(Math.random() * 3 + 1);
 
     console.log('Wylosowana liczba to: ' + randomNumber);
 
-    let computerMove = getMoveName(randomNumber);
+    const computerMove = getMoveName(randomNumber);
 
     printMessage('Mój ruch to: ' + computerMove);
 
     console.log('Gracz wpisał: ' + playerInput);
 
-    let playerMove = getMoveName(playerInput);
+    const playerMove = getMoveName(playerInput);
 
     printMessage('Twój ruch to: ' + playerMove);
 
-    let solve = displayResult(computerMove,playerMove);
+    const solve = displayResult(computerMove,playerMove);
 
     printMessage('Wynik: ' + solve);
 }
@@ -32,3 +32,4 @@ document.getElementById('play-paper').addEventListener('click', function(){
 document.getElementById('play-scissors').addEventListener('click', function(){
     playGame('3');
 });
+}

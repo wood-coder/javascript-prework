@@ -1,14 +1,14 @@
-function printMessage(msg){
+let printMessage = function (msg){
 	let div = document.createElement('div');
 	div.innerHTML = msg;
 	document.getElementById('messages').appendChild(div);
 }
 
-function clearMessages(){
+let clearMessages = function (){
 	document.getElementById('messages').innerHTML = '';
 }
 
-function getMoveName(argMoveId){
+let getMoveName = function (argMoveId){
     if(argMoveId == 1){
       return 'kamień';
     } else if(argMoveId == 2){
@@ -22,7 +22,7 @@ function getMoveName(argMoveId){
   }
 
   
-  function displayResult(argComputerMove, argPlayerMove){
+  let displayResult = function (argComputerMove, argPlayerMove){
     printMessage('Zagrałem ' + argComputerMove + ', a Ty ' + argPlayerMove);
   
     console.log('Ruchy:', argComputerMove, argPlayerMove);
